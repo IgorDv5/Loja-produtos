@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Produto implements Serializable {
@@ -14,15 +15,19 @@ public class Produto implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Integer id; 
+	 
+	@NotNull
+	private String nome; 
 	
-	private String nome;
-	private double preco;
-	private String Marca;
-	private Integer tamanho;
+	private double preco; 
+	@NotNull
+	private String Marca; 
+	private Integer tamanho; 
 	@Lob
 	private byte[] foto;
 	
+
 	public Produto() {
 		super();
 	}
