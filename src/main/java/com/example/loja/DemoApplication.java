@@ -7,7 +7,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.example.loja.domain.Pessoa;
 import com.example.loja.domain.PessoaFisica;
 import com.example.loja.domain.PessoaJuridica;
 import com.example.loja.domain.Produto;
@@ -29,11 +28,11 @@ public class DemoApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		Produto p1 = new Produto(null, "Air Jordan", 1000, "Nike", 42, null);
-		Produto p2 = new Produto(null, "Air Force", 800, "Nike", 45, null);
-		Produto p3 = new Produto(null, "Revolution", 300, "Nike", 42, null);
-		Produto p4 = new Produto(null, "Standart", 1000, "Adidas", 44, null);
-		Produto p5 = new Produto(null, "Pro 7", 1000, "Mizuno", 38, null);
+		Produto p1 = new Produto(null, "Air Jordan", 1000, "Nike", 42, 10 , null);
+		Produto p2 = new Produto(null, "Air Force", 800, "Nike", 45, 8 , null);
+		Produto p3 = new Produto(null, "Revolution", 300, "Nike", 42,2 , null);
+		Produto p4 = new Produto(null, "Standart", 1000, "Adidas", 44,10 , null);
+		Produto p5 = new Produto(null, "Pro 7", 1000, "Mizuno", 38,2 , null);
 		
 		PessoaJuridica pj1 = new PessoaJuridica(
 			    null,

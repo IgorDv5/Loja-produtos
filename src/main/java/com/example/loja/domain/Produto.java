@@ -24,6 +24,9 @@ public class Produto implements Serializable {
 	@NotNull
 	private String Marca; 
 	private Integer tamanho; 
+	
+	private Integer quantidade;
+	
 	@Lob
 	private byte[] foto;
 	
@@ -32,15 +35,21 @@ public class Produto implements Serializable {
 		super();
 	}
 
-	public Produto(Integer id, String nome, double preco, String marca, Integer tamanho, byte[] foto) {
+	
+
+	public Produto(Integer id, @NotNull String nome, double preco, @NotNull String marca, Integer tamanho,
+			Integer quantidade, byte[] foto) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.preco = preco;
 		Marca = marca;
 		this.tamanho = tamanho;
+		this.quantidade = quantidade;
 		this.foto = foto;
 	}
+
+
 
 	public Integer getId() {
 		return id;
@@ -90,6 +99,17 @@ public class Produto implements Serializable {
 		this.foto = foto;
 	}
 
-	
+
+
+	public Integer getQuantidade() {
+		return quantidade;
+	}
+
+
+	public void setQuantidade(Integer quantidade) {
+		this.quantidade = quantidade;
+	}
+
+		
 
 }
