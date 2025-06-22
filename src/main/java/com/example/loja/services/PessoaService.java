@@ -14,11 +14,15 @@ import com.example.loja.domain.dtos.PessoaFisicaDTO;
 import com.example.loja.domain.dtos.PessoaJuridicaDTO;
 import com.example.loja.repositories.PessoaRepository;
 
-@Service
+@Service 
 public class PessoaService {
 	
 	@Autowired
 	private PessoaRepository repository;
+	
+	public Pessoa findByEmail(String email) {
+	    return repository.findByEmail(email);
+	}
 	
 
 	 public Pessoa findById(Integer id) { 

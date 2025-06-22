@@ -15,6 +15,9 @@ public class PessoaJuridicaDTO implements Serializable {
 	    private String cidade;
 	    private String estado;
 	    private String cnpj; 
+	    private String email;
+	    private String senha;
+
 	    
 	    private String type = "JURIDICA";
 	    
@@ -32,6 +35,8 @@ public class PessoaJuridicaDTO implements Serializable {
 			this.cidade = obj.getCidade();
 			this.estado = obj.getEstado();
 			this.cnpj = obj.getCnpj();
+	        this.email = obj.getEmail();
+	        this.senha = obj.getSenha();
 		}
 		
 	
@@ -98,6 +103,22 @@ public class PessoaJuridicaDTO implements Serializable {
 		public void setCnpj(String cnpj) {
 			this.cnpj = cnpj;
 		}
+		
+		 public String getEmail() {
+		        return email;
+		    }
+
+		    public void setEmail(String email) {
+		        this.email = email;
+		    }
+
+		    public String getSenha() {
+		        return senha;
+		    }
+
+		    public void setSenha(String senha) {
+		        this.senha = senha;
+		    }
 	    
 		  public String getType() {
 			  return type; 

@@ -44,5 +44,5 @@ public class CompraResource {
 	        List<Compra> list = compraService.findAll();
 	        return ResponseEntity.ok().body(list);
 	    }
-
+ 
 }

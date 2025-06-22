@@ -8,21 +8,22 @@ import jakarta.validation.constraints.NotBlank;
 
 public class PessoaFisicaDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
 
-    private Integer id;
-    @NotBlank(message = "Nome é obrigatório")
-    private String nome;
-    private String endereco;
-    private String bairro;
-    private Integer cep;
-    private String cidade;
-    private String estado;
-    private String cpf;
-    private String rg;
-    
-    private String type = "FISICA";
-    
+	private Integer id;
+	@NotBlank(message = "Nome é obrigatório")
+	private String nome;
+	private String endereco;
+	private String bairro;
+	private Integer cep;
+	private String cidade;
+	private String estado;
+	private String cpf;
+	private String rg;
+	private String email;
+	private String senha;
+
+	private String type = "FISICA";
+
 	public PessoaFisicaDTO() {
 		super();
 	}
@@ -37,7 +38,9 @@ public class PessoaFisicaDTO implements Serializable {
 		this.cidade = obj.getCidade();
 		this.estado = obj.getEstado();
 		this.cpf = obj.getCpf();
-		this.rg= obj.getRg();
+		this.rg = obj.getRg();
+		this.email = obj.getEmail();
+		this.senha = obj.getSenha();
 	}
 
 	public Integer getId() {
@@ -112,8 +115,24 @@ public class PessoaFisicaDTO implements Serializable {
 		this.rg = rg;
 	}
 	
-	 public String getType() {
-		 return type;
-		 }
-    
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+	public String getType() {
+		return type;
+	}
+
 }
