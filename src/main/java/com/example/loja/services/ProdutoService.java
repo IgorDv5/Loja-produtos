@@ -18,9 +18,10 @@ public class ProdutoService {
 	private ProdutoRepository repository;
 	
 	public Produto findById(Integer id) {
-		Optional<Produto> obj = repository.findById(id);
-		return obj.orElse(null);
-	}
+        Optional<Produto> obj = repository.findById(id);
+      
+        return obj.orElseThrow(() -> new RuntimeException("Produto não encontrado! ID: " + id)); 
+    }
 	
 	public List<Produto> findAll(){
 		return repository.findAll();
