@@ -2,6 +2,9 @@ package com.example.loja.domain;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 import jakarta.persistence.DiscriminatorColumn;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,6 +16,16 @@ import jakarta.persistence.InheritanceType;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tipo_pessoa")
+
+@JsonTypeInfo(
+	    use = JsonTypeInfo.Id.NAME,              
+	    include = JsonTypeInfo.As.PROPERTY,     
+	    property = "@type"                       
+	)
+	@JsonSubTypes({
+	    @JsonSubTypes.Type(value = PessoaFisica.class, name = "FISICA"), 
+	    @JsonSubTypes.Type(value = PessoaJuridica.class, name = "JURIDICA")
+	})
 public abstract class Pessoa implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
