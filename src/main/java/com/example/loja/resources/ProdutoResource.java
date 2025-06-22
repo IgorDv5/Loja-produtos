@@ -20,7 +20,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.example.loja.domain.Produto;
 import com.example.loja.services.ProdutoService;
 
-import jakarta.annotation.PostConstruct;
 
 @RestController
 @RequestMapping(value = "/produtos")
